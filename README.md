@@ -1,1 +1,1 @@
-[GSoC 2018: title pending](gsoc2018.md)
+[GSoC 2018: The 'Google money'](gsoc2018.md)
