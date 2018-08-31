@@ -1,3 +1,3 @@
-# javierron.github.io
+# Javier's semi-awesome blog
 
-readme please
+[GSoC 2018: title pending](gsoc2018.md)
