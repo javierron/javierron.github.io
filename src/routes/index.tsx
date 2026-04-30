@@ -249,11 +249,7 @@ function Index() {
       {/* Top window bar / nav */}
       <header className="sticky top-0 z-30 border-b border-rule bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-2 text-xs sm:text-sm">
-          <span className="flex gap-1.5" aria-hidden>
-            <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.65_0.18_28)]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.78_0.16_85)]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.78_0.16_150)]" />
-          </span>
+          <span className="text-accent-term">▎</span>
           <span className="text-muted-term">~/javier-ron</span>
           <span className="text-accent-term">$</span>
           <nav className="ml-auto flex gap-1 overflow-x-auto whitespace-nowrap">
