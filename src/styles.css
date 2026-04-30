@@ -62,9 +62,17 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.25rem;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Terminal palette */
+  --background: oklch(0.16 0.015 150);
+  --foreground: oklch(0.92 0.01 120);
+  --accent-term: oklch(0.88 0.18 150);
+  --accent-term-foreground: oklch(0.16 0.015 150);
+  --muted-term: oklch(0.55 0.02 150);
+  --rule: oklch(0.32 0.02 150);
+  --selection: oklch(0.88 0.18 150 / 0.35);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
