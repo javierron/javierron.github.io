@@ -527,8 +527,7 @@ function Index() {
               </li>
               <li>
                 <span className="text-muted-term">scholar: </span>
-                {/* TODO: replace with real Google Scholar URL */}
-                <ExternalLink href="https://scholar.google.com/citations?user=">
+                <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
                   google scholar
                 </ExternalLink>
               </li>
