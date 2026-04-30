@@ -69,12 +69,12 @@ const EXPERIENCE: Experience[] = [
     tags: ["Node.js", "C"],
   },
   {
-    role: "GSoC Intern",
+    role: "Google Summer of Code Intern",
     org: "CROSS @ UC Santa Cruz",
     location: "Santa Cruz, CA, USA",
     dates: "Jun 2018 — Sep 2018",
     bullets: [
-      "Worked on Zlog, a fast distributed ledger. Caching solutions.",
+      "Spent the summer at UC Santa Cruz working on Zlog, a fast distributed ledger. Caching solutions.",
     ],
     tags: ["C++"],
   },
