@@ -69,12 +69,12 @@ const EXPERIENCE: Experience[] = [
     tags: ["Node.js", "C"],
   },
   {
-    role: "GSoC Intern",
+    role: "Google Summer of Code Intern",
     org: "CROSS @ UC Santa Cruz",
     location: "Santa Cruz, CA, USA",
     dates: "Jun 2018 — Sep 2018",
     bullets: [
-      "Worked on Zlog, a fast distributed ledger. Caching solutions.",
+      "Spent the summer at UC Santa Cruz working on Zlog, a fast distributed ledger. Caching solutions.",
     ],
     tags: ["C++"],
   },
@@ -249,11 +249,7 @@ function Index() {
       {/* Top window bar / nav */}
       <header className="sticky top-0 z-30 border-b border-rule bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-2 text-xs sm:text-sm">
-          <span className="flex gap-1.5" aria-hidden>
-            <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.65_0.18_28)]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.78_0.16_85)]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[oklch(0.78_0.16_150)]" />
-          </span>
+          <span className="text-accent-term">▎</span>
           <span className="text-muted-term">~/javier-ron</span>
           <span className="text-accent-term">$</span>
           <nav className="ml-auto flex gap-1 overflow-x-auto whitespace-nowrap">
@@ -404,6 +400,14 @@ function Index() {
         {/* Publications */}
         <section aria-labelledby="publications">
           <SectionHeading id="publications">publications</SectionHeading>
+          <p className="mt-3 text-muted-term">
+            <span className="text-muted-term">{"// "}</span>
+            full list and PDFs on{" "}
+            <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
+              Google Scholar
+            </ExternalLink>
+            .
+          </p>
 
           <h3 className="mt-6 text-foreground">
             <span className="text-muted-term">&gt; </span>first-authored
@@ -426,6 +430,13 @@ function Index() {
           <h3 className="mt-8 text-foreground">
             <span className="text-muted-term">&gt; </span>master&apos;s thesis supervision
           </h3>
+          <p className="mt-2 text-muted-term text-xs">
+            browse the full theses on{" "}
+            <ExternalLink href="https://kth.diva-portal.org/smash/resultList.jsf?dswid=-4901&language=en&searchType=SIMPLE&query=javier+ron&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=undergraduate">
+              KTH DiVA
+            </ExternalLink>
+            .
+          </p>
           <ul className="mt-3 space-y-2">
             {THESES.map((t) => (
               <li key={t.student} className="text-foreground/90">
@@ -516,8 +527,7 @@ function Index() {
               </li>
               <li>
                 <span className="text-muted-term">scholar: </span>
-                {/* TODO: replace with real Google Scholar URL */}
-                <ExternalLink href="https://scholar.google.com/citations?user=">
+                <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
                   google scholar
                 </ExternalLink>
               </li>
