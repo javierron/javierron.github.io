@@ -122,30 +122,33 @@ const EDUCATION: Education[] = [
   },
 ];
 
-type Pub = { title: string; venue: string; year: string; desc: string; tags?: string[] };
+type Pub = { title: string; venue: string; year: string; desc: string; url: string; tags?: string[] };
+
+const SCHOLAR = (cid: string) =>
+  `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QSYKdF4AAAAJ&citation_for_view=QSYKdF4AAAAJ:${cid}`;
 
 const PUBS_FIRST: Pub[] = [
-  { title: "N-ETH", venue: "IEEE TDSC", year: "—", desc: "N-version engineering for Ethereum nodes." },
-  { title: "Galapagos", venue: "ACM TOSEM", year: "—", desc: "LLM-powered N-version program synthesis." },
-  { title: "VCD", venue: "ACM Distributed Ledger Technologies", year: "—", desc: "Verifiable computation for economically rewarded software diversity." },
-  { title: "Verifiable Compilation", venue: "Under review", year: "2026", desc: "Compilation in a zkVM environment for verifiable software artifact provenance." },
+  { title: "N-ETH", venue: "IEEE TDSC", year: "2023", desc: "Highly available blockchain nodes with N-version design.", url: SCHOLAR("2osOgNQ5qMEC") },
+  { title: "Galapagos", venue: "ACM TOSEM", year: "2025", desc: "Automated N-version programming with LLMs.", url: SCHOLAR("Tyk-4Ss8FVUC") },
+  { title: "VCD", venue: "ACM Distributed Ledger Technologies", year: "2025", desc: "Proving and rewarding client diversity to strengthen resilience of blockchain networks.", url: SCHOLAR("Y0pCki6q_DkC") },
+  { title: "Verifiable Compilation", venue: "arXiv (under review)", year: "2026", desc: "Verifiable provenance of software artifacts via zero-knowledge compilation.", url: SCHOLAR("eQOLeE2rZwMC") },
 ];
 
 const PUBS_COLLAB: Pub[] = [
-  { title: "R-HERO", venue: "IEEE Software", year: "2021", desc: "Continual learning for automatic program repair.", tags: ["Java", "OpenNMT"] },
-  { title: "SBOM", venue: "IEEE Security & Privacy", year: "2023", desc: "Challenges of creating SBOMs for Java applications.", tags: ["Java", "Maven"] },
-  { title: "Gen AI", venue: "IEEE Software", year: "2024", desc: "Test case and test data generation with LLMs." },
-  { title: "UPPERCASE", venue: "SIGBOVIK", year: "2025", desc: "Case sensitivity in LLMs (lighthearted, almost unserious paper)." },
-  { title: "Chaos ETH", venue: "ACM Distributed Ledger Technologies", year: "2023", desc: "Chaos engineering for Ethereum clients.", tags: ["eBPF", "fault injection", "syscall interception"] },
-  { title: "Servo", venue: "IEEE ICDCS", year: "2023", desc: "Serverless scaling of Minecraft-like games.", tags: ["Minecraft", "Java", "AWS"] },
+  { title: "R-HERO", venue: "IEEE Software", year: "2021", desc: "A software-repair robot based on continual learning.", url: SCHOLAR("u5HHmVD_uO8C"), tags: ["Java", "OpenNMT"] },
+  { title: "SBOM", venue: "IEEE Security & Privacy", year: "2023", desc: "Challenges of producing software bill of materials for Java.", url: SCHOLAR("9yKSN-GCB0IC"), tags: ["Java", "Maven"] },
+  { title: "Gen AI", venue: "IEEE Software", year: "2024", desc: "Generative AI to generate test data generators.", url: SCHOLAR("zYLM7Y9cAGgC") },
+  { title: "UPPERCASE", venue: "SIGBOVIK", year: "2025", desc: "Uppercase is all you need (lighthearted, almost unserious paper).", url: SCHOLAR("YsMSGLbcyi4C") },
+  { title: "Chaos ETH", venue: "ACM Distributed Ledger Technologies", year: "2023", desc: "Chaos engineering of Ethereum blockchain clients.", url: SCHOLAR("d1gkVwhDpl0C"), tags: ["eBPF", "fault injection", "syscall interception"] },
+  { title: "Servo", venue: "IEEE ICDCS", year: "2023", desc: "Serverless scaling of modifiable virtual environments (Minecraft-like games).", url: SCHOLAR("UeHWp8X0CEIC"), tags: ["Minecraft", "Java", "AWS"] },
 ];
 
 const THESES = [
-  { student: "Vivi Andersson", title: "Geth Rebuild: Verifiable Builds for Go Ethereum" },
-  { student: "Titouan Forissier", title: "EVeilM: EVM Bytecode Obfuscation" },
-  { student: "Dhruv Shetty", title: "Minimizing Blast Radius of Chaos Engineering Experiments via Steady-State Metrics Forecasting" },
-  { student: "Tom Sorger", title: "Towards Zero-Knowledge Software Bill of Materials" },
-  { student: "Leonard Stutzer", title: "State Validation of Ethash-based Blockchains using a zk-SNARK-based Chain Relay" },
+  { student: "Vivi Andersson", title: "Geth Rebuild: Verifiable Builds for Go Ethereum", url: "https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1908608" },
+  { student: "Titouan Forissier", title: "EVeilM: EVM Bytecode Obfuscation", url: "https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1935522" },
+  { student: "Dhruv Shetty", title: "Minimizing Blast Radius of Chaos Engineering Experiments via Steady-State Metrics Forecasting", url: "https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1801368" },
+  { student: "Tom Sorger", title: "Towards Zero-Knowledge Software Bill of Materials", url: "https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1998445" },
+  { student: "Leonard Stutzer", title: "State Validation of Ethash-based Blockchains using a zk-SNARK-based Chain Relay", url: "https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1710479" },
 ];
 
 const AWARDS = [
