@@ -446,7 +446,14 @@ function Index() {
                 <span className="text-muted-term">— </span>
                 <span className="text-accent-term">{t.student}</span>
                 <span className="text-muted-term"> · </span>
-                {t.title}
+                <a
+                  href={t.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="term-link"
+                >
+                  {t.title}
+                </a>
               </li>
             ))}
           </ul>
@@ -566,7 +573,14 @@ function PubItem({ pub }: { pub: Pub }) {
     <li className="grid gap-0.5">
       <div className="flex flex-wrap items-baseline gap-x-2">
         <span className="text-accent-term">▸</span>
-        <span className="font-bold text-foreground">{pub.title}</span>
+        <a
+          href={pub.url}
+          target="_blank"
+          rel="noreferrer noopener"
+          className="term-link font-bold"
+        >
+          {pub.title}
+        </a>
         <span className="text-muted-term">
           · <em className="not-italic">{pub.venue}</em> · {pub.year}
         </span>
