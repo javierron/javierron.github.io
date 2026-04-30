@@ -400,6 +400,14 @@ function Index() {
         {/* Publications */}
         <section aria-labelledby="publications">
           <SectionHeading id="publications">publications</SectionHeading>
+          <p className="mt-3 text-muted-term">
+            <span className="text-muted-term">{"// "}</span>
+            full list and PDFs on{" "}
+            <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
+              Google Scholar
+            </ExternalLink>
+            .
+          </p>
 
           <h3 className="mt-6 text-foreground">
             <span className="text-muted-term">&gt; </span>first-authored
@@ -422,6 +430,13 @@ function Index() {
           <h3 className="mt-8 text-foreground">
             <span className="text-muted-term">&gt; </span>master&apos;s thesis supervision
           </h3>
+          <p className="mt-2 text-muted-term text-xs">
+            browse the full theses on{" "}
+            <ExternalLink href="https://kth.diva-portal.org/smash/resultList.jsf?dswid=-4901&language=en&searchType=SIMPLE&query=javier+ron&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=undergraduate">
+              KTH DiVA
+            </ExternalLink>
+            .
+          </p>
           <ul className="mt-3 space-y-2">
             {THESES.map((t) => (
               <li key={t.student} className="text-foreground/90">
