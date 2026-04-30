@@ -24,24 +24,36 @@ function NotFoundComponent() {
   );
 }
 
+const SITE_TITLE = "Javier Ron — Systems Programmer & Researcher";
+const SITE_DESC =
+  "Personal website of Javier Ron — PhD researcher at KTH working on AI for code, verifiable software supply chains, and systems reliability. Game programmer.";
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: SITE_TITLE },
+      { name: "description", content: SITE_DESC },
+      { name: "author", content: "Javier Ron" },
+      { property: "og:title", content: SITE_TITLE },
+      { property: "og:description", content: SITE_DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap",
+      },
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href:
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230b110d'/%3E%3Ctext x='6' y='23' font-family='monospace' font-size='20' font-weight='700' fill='%237cffb2'%3E%26gt;%3C/text%3E%3C/svg%3E",
       },
     ],
   }),

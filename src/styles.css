@@ -62,9 +62,17 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.25rem;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Terminal palette */
+  --background: oklch(0.16 0.015 150);
+  --foreground: oklch(0.92 0.01 120);
+  --accent-term: oklch(0.88 0.18 150);
+  --accent-term-foreground: oklch(0.16 0.015 150);
+  --muted-term: oklch(0.55 0.02 150);
+  --rule: oklch(0.32 0.02 150);
+  --selection: oklch(0.88 0.18 150 / 0.35);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -137,8 +145,58 @@
     border-color: var(--color-border);
   }
 
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+  html, body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--selection);
+    color: var(--accent-term-foreground);
+  }
+}
+
+@layer utilities {
+  .text-accent-term { color: var(--accent-term); }
+  .bg-accent-term { background-color: var(--accent-term); }
+  .text-muted-term { color: var(--muted-term); }
+  .border-rule { border-color: var(--rule); }
+
+  .term-link {
+    color: var(--accent-term);
+    text-decoration: none;
+    border-bottom: 1px dashed color-mix(in oklab, var(--accent-term) 50%, transparent);
+    transition: background-color 80ms linear, color 80ms linear;
+  }
+  .term-link:hover, .term-link:focus-visible {
+    background: var(--accent-term);
+    color: var(--accent-term-foreground);
+    outline: none;
+    border-bottom-color: var(--accent-term);
+  }
+
+  .blink-cursor::after {
+    content: "▮";
+    display: inline-block;
+    margin-left: 0.15em;
+    color: var(--accent-term);
+    animation: term-blink 1s steps(2, start) infinite;
+  }
+
+  @keyframes term-blink {
+    to { visibility: hidden; }
+  }
+
+  .tag-chip {
+    display: inline-block;
+    padding: 0 0.4rem;
+    margin: 0 0.25rem 0.25rem 0;
+    color: var(--accent-term);
+    border: 1px solid color-mix(in oklab, var(--accent-term) 40%, transparent);
+    border-radius: 2px;
+    font-size: 0.75rem;
+    line-height: 1.4rem;
   }
 }
