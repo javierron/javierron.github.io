@@ -403,7 +403,7 @@ function Index() {
                     {ed.notes.map((n) => (
                       <li key={n}>
                         <span className="text-muted-term">— </span>
-                        {n}
+                        <span dangerouslySetInnerHTML={{ __html: n }} />
                       </li>
                     ))}
                   </ul>
