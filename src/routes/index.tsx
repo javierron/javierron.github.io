@@ -330,16 +330,15 @@ function Index() {
               <ExternalLink href="https://www.monperrus.net/martin/">
                 Martin Monperrus
               </ExternalLink>
-              . My research sits at the intersection of programming languages,
-              distributed systems, and security: AI on code, verifiable software
-              supply chains, and the reliability of large systems (Ethereum
-              clients in particular).
+              . My research sits at the intersection of AI on code, verifiable
+              software supply chains, and the reliability of distributed
+              systems (Ethereum in particular).
             </p>
             <p>
               Before academia I shipped a game (
               <em>To Leave</em>) on every major console, ran backend
-              microservices at Criptext, and spent a summer at GSoC working on
-              distributed storage. More recently I interned at{" "}
+              microservices at Criptext, and spent a Google Summer of Code
+              working on distributed storage. More recently I interned at{" "}
               <strong className="text-accent-term">Meta</strong> on the
               Metadata Store team.
             </p>
