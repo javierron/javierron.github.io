@@ -48,7 +48,7 @@ const EXPERIENCE: Experience[] = [
     bullets: [
       "Automated Ethereum infrastructure for the Lido CSM staking protocol.",
     ],
-    tags: ["Python"],
+    tags: ["Python", "Ethereum"],
   },
   {
     role: "Research Assistant",
@@ -59,6 +59,7 @@ const EXPERIENCE: Experience[] = [
       "Research on AI for automatic program repair.",
       "Published a paper on continual learning for automatic repair of Java bugs.",
     ],
+    tags: ["Java", "Jenkins"],
   },
   {
     role: "Backend Engineer",
@@ -112,7 +113,9 @@ const EDUCATION: Education[] = [
     school: "KTH Royal Institute of Technology",
     location: "Stockholm, Sweden",
     dates: "2019 — 2021",
-    notes: ["Thesis on serverless for games."],
+    notes: [
+      'Thesis: <a href="https://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1613786" target="_blank" rel="noreferrer noopener" class="term-link">Scaling the Simulation Core of Modifiable Virtual Environments with Serverless Computing</a>.',
+    ],
   },
   {
     degree: "Computer Science Engineering",
@@ -128,19 +131,19 @@ const SCHOLAR = (cid: string) =>
   `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QSYKdF4AAAAJ&citation_for_view=QSYKdF4AAAAJ:${cid}`;
 
 const PUBS_FIRST: Pub[] = [
-  { title: "N-ETH", venue: "IEEE TDSC", year: "2023", desc: "Highly available blockchain nodes with N-version design.", url: SCHOLAR("2osOgNQ5qMEC") },
-  { title: "Galapagos", venue: "ACM TOSEM", year: "2025", desc: "Automated N-version programming with LLMs.", url: SCHOLAR("Tyk-4Ss8FVUC") },
-  { title: "VCD", venue: "ACM Distributed Ledger Technologies", year: "2025", desc: "Proving and rewarding client diversity to strengthen resilience of blockchain networks.", url: SCHOLAR("Y0pCki6q_DkC") },
-  { title: "Verifiable Compilation", venue: "arXiv (under review)", year: "2026", desc: "Verifiable provenance of software artifacts via zero-knowledge compilation.", url: SCHOLAR("eQOLeE2rZwMC") },
+  { title: "Highly Available Blockchain Nodes with N-Version Design", venue: "IEEE TDSC", year: "2023", desc: "N-version design applied to Ethereum clients to improve node availability.", url: SCHOLAR("2osOgNQ5qMEC") },
+  { title: "Galapagos: Automated N-Version Programming with LLMs", venue: "ACM TOSEM", year: "2025", desc: "Automated N-version programming using large language models.", url: SCHOLAR("Tyk-4Ss8FVUC") },
+  { title: "Proving and Rewarding Client Diversity to Strengthen Resilience of Blockchain Networks", venue: "ACM Distributed Ledger Technologies", year: "2025", desc: "Cryptographic proofs of client diversity for blockchain network resilience.", url: SCHOLAR("Y0pCki6q_DkC") },
+  { title: "Verifiable Provenance of Software Artifacts with Zero-Knowledge Compilation", venue: "arXiv (under review)", year: "2026", desc: "Verifiable provenance of software artifacts via zero-knowledge compilation.", url: SCHOLAR("eQOLeE2rZwMC") },
 ];
 
 const PUBS_COLLAB: Pub[] = [
-  { title: "R-HERO", venue: "IEEE Software", year: "2021", desc: "A software-repair robot based on continual learning.", url: SCHOLAR("u5HHmVD_uO8C"), tags: ["Java", "OpenNMT"] },
-  { title: "SBOM", venue: "IEEE Security & Privacy", year: "2023", desc: "Challenges of producing software bill of materials for Java.", url: SCHOLAR("9yKSN-GCB0IC"), tags: ["Java", "Maven"] },
-  { title: "Gen AI", venue: "IEEE Software", year: "2024", desc: "Generative AI to generate test data generators.", url: SCHOLAR("zYLM7Y9cAGgC") },
-  { title: "UPPERCASE", venue: "SIGBOVIK", year: "2025", desc: "Uppercase is all you need (lighthearted, almost unserious paper).", url: SCHOLAR("YsMSGLbcyi4C") },
-  { title: "Chaos ETH", venue: "ACM Distributed Ledger Technologies", year: "2023", desc: "Chaos engineering of Ethereum blockchain clients.", url: SCHOLAR("d1gkVwhDpl0C"), tags: ["eBPF", "fault injection", "syscall interception"] },
-  { title: "Servo", venue: "IEEE ICDCS", year: "2023", desc: "Serverless scaling of modifiable virtual environments (Minecraft-like games).", url: SCHOLAR("UeHWp8X0CEIC"), tags: ["Minecraft", "Java", "AWS"] },
+  { title: "A Software-Repair Robot Based on Continual Learning", venue: "IEEE Software", year: "2021", desc: "Continual learning for automatic repair of Java bugs.", url: SCHOLAR("u5HHmVD_uO8C"), tags: ["Java", "OpenNMT"] },
+  { title: "Challenges of Producing Software Bill of Materials for Java", venue: "IEEE Security & Privacy", year: "2023", desc: "Open challenges in producing accurate SBOMs for the Java ecosystem.", url: SCHOLAR("9yKSN-GCB0IC"), tags: ["Java", "Maven"] },
+  { title: "Generative AI to Generate Test Data Generators", venue: "IEEE Software", year: "2024", desc: "Using generative AI to synthesize test data generators.", url: SCHOLAR("zYLM7Y9cAGgC") },
+  { title: "Uppercase is All You Need", venue: "SIGBOVIK", year: "2025", desc: "A lighthearted, almost unserious paper.", url: SCHOLAR("YsMSGLbcyi4C") },
+  { title: "Chaos Engineering of Ethereum Blockchain Clients", venue: "ACM Distributed Ledger Technologies", year: "2023", desc: "Chaos engineering of Ethereum blockchain clients via syscall fault injection.", url: SCHOLAR("d1gkVwhDpl0C"), tags: ["eBPF", "fault injection", "syscall interception"] },
+  { title: "Servo: Increasing the Scalability of Modifiable Virtual Environments using Serverless Computing", venue: "IEEE ICDCS", year: "2023", desc: "Serverless scaling of modifiable virtual environments (Minecraft-like games).", url: SCHOLAR("UeHWp8X0CEIC"), tags: ["Minecraft", "Java", "AWS"] },
 ];
 
 const THESES = [
@@ -158,7 +161,20 @@ const AWARDS = [
   { title: "1st place — Essential, ETH Global @ Devcon", org: "Tooling for the Essential programming language: Hardhat integration and LSP.", year: "2024" },
 ];
 
-const LANGS = ["C", "C++", "C#", "Java", "JavaScript"];
+const LANGS = [
+  "Java",
+  "Thrift",
+  "React",
+  "Hack",
+  "Python",
+  "Ethereum",
+  "Jenkins",
+  "Node.js",
+  "C",
+  "C++",
+  "C#",
+  "Unity",
+];
 
 const SPOKEN = [
   { name: "English", level: "Full Professional" },
@@ -314,16 +330,15 @@ function Index() {
               <ExternalLink href="https://www.monperrus.net/martin/">
                 Martin Monperrus
               </ExternalLink>
-              . My research sits at the intersection of programming languages,
-              distributed systems, and security: AI on code, verifiable software
-              supply chains, and the reliability of large systems (Ethereum
-              clients in particular).
+              . My research sits at the intersection of AI on code, verifiable
+              software supply chains, and the reliability of distributed
+              systems (Ethereum in particular).
             </p>
             <p>
               Before academia I shipped a game (
               <em>To Leave</em>) on every major console, ran backend
-              microservices at Criptext, and spent a summer at GSoC working on
-              distributed storage. More recently I interned at{" "}
+              microservices at Criptext, and spent a Google Summer of Code
+              working on distributed storage. More recently I interned at{" "}
               <strong className="text-accent-term">Meta</strong> on the
               Metadata Store team.
             </p>
@@ -388,7 +403,7 @@ function Index() {
                     {ed.notes.map((n) => (
                       <li key={n}>
                         <span className="text-muted-term">— </span>
-                        {n}
+                        <span dangerouslySetInnerHTML={{ __html: n }} />
                       </li>
                     ))}
                   </ul>
