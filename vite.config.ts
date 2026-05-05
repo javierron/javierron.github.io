@@ -6,4 +6,17 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+const base = process.env.BASE_PATH ?? "/";
+
+export default defineConfig({
+  cloudflare: false,
+  tanstackStart: {
+    prerender: {
+      enabled: true,
+      autoSubfolderIndex: true,
+    },
+  },
+  vite: {
+    base,
+  },
+});

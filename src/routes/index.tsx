@@ -547,24 +547,16 @@ function Index() {
                 </ExternalLink>
               </li>
               <li>
-                <span className="text-muted-term">twitter/x: </span>
-                <ExternalLink href="https://x.com/javierron">@javierron</ExternalLink>
-              </li>
-              <li>
                 <span className="text-muted-term">scholar: </span>
                 <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
-                  google scholar
+                  Javier Ron
                 </ExternalLink>
               </li>
               <li>
-                <span className="text-muted-term">orcid: </span>
-                {/* TODO: replace with real ORCID URL */}
-                <ExternalLink href="https://orcid.org/">orcid.org/…</ExternalLink>
-              </li>
-              <li>
                 <span className="text-muted-term">linkedin: </span>
-                {/* TODO: replace with real LinkedIn URL */}
-                <ExternalLink href="https://www.linkedin.com/in/">linkedin/in/…</ExternalLink>
+                <ExternalLink href="https://www.linkedin.com/in/javier-ron-arteaga-2ba3a579/">
+                  Javier Ron Arteaga
+                </ExternalLink>
               </li>
             </ul>
           </div>
