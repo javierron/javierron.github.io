@@ -335,10 +335,13 @@ function Index() {
               systems (Ethereum in particular).
             </p>
             <p>
-              Before academia I shipped a game (
-              <em>To Leave</em>) on every major console, ran backend
-              microservices at Criptext, and spent a Google Summer of Code
-              working on distributed storage. More recently I interned at{" "}
+              Before academia I shipped an{" "}
+              <ExternalLink href="https://store.steampowered.com/app/896340/To_Leave/">
+                indie game
+              </ExternalLink>
+              , ran backend microservices at Criptext, and spent a Google
+              Summer of Code working on distributed storage. More recently I
+              interned at{" "}
               <strong className="text-accent-term">Meta</strong> on the
               Metadata Store team.
             </p>
