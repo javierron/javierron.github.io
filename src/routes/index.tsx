@@ -566,7 +566,7 @@ function Index() {
 
         <footer className="mt-2 text-xs text-muted-term">
           <p>
-            <span className="text-accent-term">$</span> echo &quot;built with care · Stockholm&quot;
+            <span className="text-accent-term">$</span> echo &quot;fear is the mind-killer&quot;
           </p>
           <p className="mt-1">© {new Date().getFullYear()} Javier Ron.</p>
         </footer>
