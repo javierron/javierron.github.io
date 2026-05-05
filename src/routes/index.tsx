@@ -127,6 +127,9 @@ const EDUCATION: Education[] = [
 
 type Pub = { title: string; venue: string; year: string; desc: string; url: string; tags?: string[] };
 
+const sortPubsByYear = (pubs: Pub[]) =>
+  [...pubs].sort((a, b) => Number(b.year) - Number(a.year) || a.title.localeCompare(b.title));
+
 const SCHOLAR = (cid: string) =>
   `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QSYKdF4AAAAJ&citation_for_view=QSYKdF4AAAAJ:${cid}`;
 
@@ -140,10 +143,11 @@ const PUBS_FIRST: Pub[] = [
 const PUBS_COLLAB: Pub[] = [
   { title: "A Software-Repair Robot Based on Continual Learning", venue: "IEEE Software", year: "2021", desc: "Continual learning for automatic repair of Java bugs.", url: SCHOLAR("u5HHmVD_uO8C"), tags: ["Java", "OpenNMT"] },
   { title: "Challenges of Producing Software Bill of Materials for Java", venue: "IEEE Security & Privacy", year: "2023", desc: "Open challenges in producing accurate SBOMs for the Java ecosystem.", url: SCHOLAR("9yKSN-GCB0IC"), tags: ["Java", "Maven"] },
-  { title: "Generative AI to Generate Test Data Generators", venue: "IEEE Software", year: "2024", desc: "Using generative AI to synthesize test data generators.", url: SCHOLAR("zYLM7Y9cAGgC") },
-  { title: "Uppercase is All You Need", venue: "SIGBOVIK", year: "2025", desc: "A lighthearted, almost unserious paper.", url: SCHOLAR("YsMSGLbcyi4C") },
+  { title: "Generative AI to Generate Test Data Generators", venue: "IEEE Software", year: "2024", desc: "Evaluating LLMs for generating realistic test data generators across domains and integration levels.", url: SCHOLAR("zYLM7Y9cAGgC"), tags: ["LLMs", "software testing", "test data generation"] },
+  { title: "Uppercase is All You Need", venue: "SIGBOVIK", year: "2025", desc: "A very serious study of how uppercase text affects prompting, code generation, and AI behavior.", url: SCHOLAR("YsMSGLbcyi4C"), tags: ["LLMs", "prompting"] },
   { title: "Chaos Engineering of Ethereum Blockchain Clients", venue: "ACM Distributed Ledger Technologies", year: "2023", desc: "Chaos engineering of Ethereum blockchain clients via syscall fault injection.", url: SCHOLAR("d1gkVwhDpl0C"), tags: ["eBPF", "fault injection", "syscall interception"] },
   { title: "Servo: Increasing the Scalability of Modifiable Virtual Environments using Serverless Computing", venue: "IEEE ICDCS", year: "2023", desc: "Serverless scaling of modifiable virtual environments (Minecraft-like games).", url: SCHOLAR("UeHWp8X0CEIC"), tags: ["Minecraft", "Java", "AWS"] },
+  { title: "zkSBOM: Privacy-Preserving SBOM Sharing with Zero-Knowledge Sets", venue: "arXiv", year: "2026", desc: "Privacy-preserving SBOM sharing with zero-knowledge sets.", url: "https://arxiv.org/abs/2605.00076", tags: ["SBOM", "zero-knowledge"] },
 ];
 
 const THESES = [
@@ -421,57 +425,50 @@ function Index() {
         {/* Publications */}
         <section aria-labelledby="publications">
           <SectionHeading id="publications">publications</SectionHeading>
-          <p className="mt-3 text-muted-term">
-            <span className="text-muted-term">{"// "}</span>
-            full list and PDFs on{" "}
-            <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
-              Google Scholar
-            </ExternalLink>
-            .
-          </p>
 
-          <h3 className="mt-6 text-foreground">
-            <span className="text-muted-term">&gt; </span>first-authored
+          <h3 className="mt-3 text-lg font-bold text-accent-term sm:text-xl">
+            <span className="text-muted-term">### </span>first-authored
           </h3>
           <ul className="mt-3 space-y-4">
-            {PUBS_FIRST.map((p) => (
+            {sortPubsByYear(PUBS_FIRST).map((p) => (
               <PubItem key={p.title} pub={p} />
             ))}
           </ul>
 
-          <h3 className="mt-8 text-foreground">
-            <span className="text-muted-term">&gt; </span>collaborations
+          <h3 className="mt-8 text-lg font-bold text-accent-term sm:text-xl">
+            <span className="text-muted-term">### </span>collaborations
           </h3>
           <ul className="mt-3 space-y-4">
-            {PUBS_COLLAB.map((p) => (
+            {sortPubsByYear(PUBS_COLLAB).map((p) => (
               <PubItem key={p.title} pub={p} />
             ))}
           </ul>
 
-          <h3 className="mt-8 text-foreground">
-            <span className="text-muted-term">&gt; </span>master&apos;s thesis supervision
+          <h3 className="mt-8 text-lg font-bold text-accent-term sm:text-xl">
+            <span className="text-muted-term">### </span>master&apos;s thesis supervision
           </h3>
           <p className="mt-2 text-muted-term text-xs">
-            browse the full theses on{" "}
-            <ExternalLink href="https://kth.diva-portal.org/smash/resultList.jsf?dswid=-4901&language=en&searchType=SIMPLE&query=javier+ron&af=%5B%5D&aq=%5B%5B%5D%5D&aq2=%5B%5B%5D%5D&aqe=%5B%5D&noOfRows=50&sortOrder=author_sort_asc&sortOrder2=title_sort_asc&onlyFullText=false&sf=undergraduate">
-              KTH DiVA
-            </ExternalLink>
-            .
+            As part of my PhD, I&apos;ve mentored junior members of the
+            research team on their master&apos;s theses.
           </p>
-          <ul className="mt-3 space-y-2">
+          <ul className="mt-3 space-y-4">
             {THESES.map((t) => (
-              <li key={t.student} className="text-foreground/90">
-                <span className="text-muted-term">— </span>
-                <span className="text-accent-term">{t.student}</span>
-                <span className="text-muted-term"> · </span>
-                <a
-                  href={t.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="term-link"
-                >
-                  {t.title}
-                </a>
+              <li key={t.student} className="grid gap-0.5">
+                <div className="grid grid-cols-[auto_1fr] items-start gap-x-2">
+                  <span className="text-accent-term">▸</span>
+                  <div className="min-w-0 text-foreground/90">
+                    <span className="text-accent-term">{t.student}</span>
+                    <span className="text-muted-term"> · </span>
+                    <a
+                      href={t.url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="term-link"
+                    >
+                      {t.title}
+                    </a>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
@@ -581,19 +578,22 @@ function Index() {
 function PubItem({ pub }: { pub: Pub }) {
   return (
     <li className="grid gap-0.5">
-      <div className="flex flex-wrap items-baseline gap-x-2">
+      <div className="grid grid-cols-[auto_1fr] items-start gap-x-2">
         <span className="text-accent-term">▸</span>
-        <a
-          href={pub.url}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="term-link font-bold"
-        >
-          {pub.title}
-        </a>
-        <span className="text-muted-term">
-          · <em className="not-italic">{pub.venue}</em> · {pub.year}
-        </span>
+        <div className="min-w-0">
+          <a
+            href={pub.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="term-link font-bold"
+          >
+            {pub.title}
+          </a>
+          <span className="text-muted-term">
+            {" "}
+            · <em className="not-italic">{pub.venue}</em> · {pub.year}
+          </span>
+        </div>
       </div>
       <p className="pl-5 text-foreground/90">{pub.desc}</p>
       {pub.tags && (
