@@ -134,10 +134,10 @@ const SCHOLAR = (cid: string) =>
   `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QSYKdF4AAAAJ&citation_for_view=QSYKdF4AAAAJ:${cid}`;
 
 const PUBS_FIRST: Pub[] = [
-  { title: "Highly Available Blockchain Nodes with N-Version Design", venue: "IEEE TDSC", year: "2023", desc: "N-version design applied to Ethereum clients to improve node availability.", url: SCHOLAR("2osOgNQ5qMEC") },
-  { title: "Galapagos: Automated N-Version Programming with LLMs", venue: "ACM TOSEM", year: "2025", desc: "Automated N-version programming using large language models.", url: SCHOLAR("Tyk-4Ss8FVUC") },
-  { title: "Proving and Rewarding Client Diversity to Strengthen Resilience of Blockchain Networks", venue: "ACM Distributed Ledger Technologies", year: "2025", desc: "Cryptographic proofs of client diversity for blockchain network resilience.", url: SCHOLAR("Y0pCki6q_DkC") },
-  { title: "Verifiable Provenance of Software Artifacts with Zero-Knowledge Compilation", venue: "arXiv (under review)", year: "2026", desc: "Verifiable provenance of software artifacts via zero-knowledge compilation.", url: SCHOLAR("eQOLeE2rZwMC") },
+  { title: "Highly Available Blockchain Nodes with N-Version Design", venue: "IEEE TDSC", year: "2023", desc: "N-version design applied to Ethereum clients to improve node availability.", url: SCHOLAR("2osOgNQ5qMEC"), tags: ["Ethereum", "N-version design", "reliability"] },
+  { title: "Galapagos: Automated N-Version Programming with LLMs", venue: "ACM TOSEM", year: "2025", desc: "Automated N-version programming using large language models.", url: SCHOLAR("Tyk-4Ss8FVUC"), tags: ["LLMs", "N-version programming", "program synthesis"] },
+  { title: "Proving and Rewarding Client Diversity to Strengthen Resilience of Blockchain Networks", venue: "ACM Distributed Ledger Technologies", year: "2025", desc: "Cryptographic proofs of client diversity for blockchain network resilience.", url: SCHOLAR("Y0pCki6q_DkC"), tags: ["blockchains", "cryptography", "client diversity"] },
+  { title: "Verifiable Provenance of Software Artifacts with Zero-Knowledge Compilation", venue: "arXiv (under review)", year: "2026", desc: "Verifiable provenance of software artifacts via zero-knowledge compilation.", url: SCHOLAR("eQOLeE2rZwMC"), tags: ["software supply chain", "zero-knowledge", "provenance"] },
 ];
 
 const PUBS_COLLAB: Pub[] = [
