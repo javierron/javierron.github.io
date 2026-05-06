@@ -159,10 +159,8 @@ const THESES = [
 ];
 
 const AWARDS = [
-  { title: "KTH 1-year Scholarship", org: "KTH", year: "2020" },
-  { title: "Karl Engvers Scholarship", org: "KTH", year: "2020" },
-  { title: "1st place — ETH Prague", org: "Transaction mining for automatic program repair of smart contracts.", year: "2023" },
-  { title: "1st place — Essential, ETH Global @ Devcon", org: "Tooling for the Essential programming language: Hardhat integration and LSP.", year: "2024" },
+  { title: "KTH One-year Scholarship", org: "Awarded to KTH master’s students with outstanding first-year results", year: "2020" },
+  { title: "1st place — ETH Prage Hackathon", org: "Transaction mining for automatic program repair of smart contracts.", year: "2023" },
 ];
 
 const LANGS = [
@@ -261,9 +259,9 @@ function Index() {
       <header className="sticky top-0 z-30 border-b border-rule bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <div className="flex w-full min-w-0 flex-wrap items-center gap-3 px-4 py-2 text-xs sm:flex-nowrap sm:text-sm">
           <span className="text-accent-term">▎</span>
-          <span className="text-muted-term">~/javier-ron</span>
+          <span className="text-muted-term whitespace-nowrap">/home/javier</span>
           <span className="text-accent-term">$</span>
-          <nav className="ml-0 flex w-full min-w-0 gap-1 overflow-x-auto whitespace-nowrap sm:ml-auto sm:w-auto sm:overflow-visible">
+          <nav className="ml-auto hidden gap-1 whitespace-nowrap sm:flex">
             {NAV.map((n) => (
               <a
                 key={n.id}
