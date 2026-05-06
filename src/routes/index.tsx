@@ -160,7 +160,7 @@ const THESES = [
 
 const AWARDS = [
   { title: "KTH One-year Scholarship", org: "Awarded to KTH master’s students with outstanding first-year results", year: "2020" },
-  { title: "1st place — ETH Prague Hackathon", org: "Transaction mining for automatic program repair of smart contracts.", year: "2023" },
+  { title: "1st place — ETH Prague Hackathon", org: "Transaction mining for automatic program repair of smart contracts.", year: "2024" },
 ];
 
 const LANGS = [
