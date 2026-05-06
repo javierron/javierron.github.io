@@ -231,7 +231,6 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
 
 function Index() {
   const [active, setActive] = useState<string>("about");
-  const [emailCopied, setEmailCopied] = useState(false);
 
   useEffect(() => {
     const sections = NAV.map((n) => document.getElementById(n.id)).filter(
@@ -256,26 +255,15 @@ function Index() {
     history.replaceState(null, "", `#${id}`);
   };
 
-  const copyEmail = async () => {
-    const email = "javierron90" + "@" + "gmail.com";
-    try {
-      await navigator.clipboard.writeText(email);
-      setEmailCopied(true);
-      setTimeout(() => setEmailCopied(false), 1500);
-    } catch {
-      /* noop */
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Top window bar / nav */}
       <header className="sticky top-0 z-30 border-b border-rule bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-        <div className="flex w-max min-w-full items-center gap-3 px-4 py-2 text-xs sm:text-sm">
+        <div className="flex w-full min-w-0 flex-wrap items-center gap-3 px-4 py-2 text-xs sm:flex-nowrap sm:text-sm">
           <span className="text-accent-term">▎</span>
           <span className="text-muted-term">~/javier-ron</span>
           <span className="text-accent-term">$</span>
-          <nav className="ml-auto flex gap-1 whitespace-nowrap">
+          <nav className="ml-0 flex w-full min-w-0 gap-1 overflow-x-auto whitespace-nowrap sm:ml-auto sm:w-auto sm:overflow-visible">
             {NAV.map((n) => (
               <a
                 key={n.id}
@@ -528,37 +516,19 @@ function Index() {
           <SectionHeading id="contact">contact</SectionHeading>
           <div className="mt-4 space-y-3">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-muted-term">email:</span>
               <code className="text-accent-term">javierron90 [at] gmail [dot] com</code>
-              <button
-                type="button"
-                onClick={copyEmail}
-                className="term-link text-xs"
-                aria-label="Copy email address"
-              >
-                {emailCopied ? "[copied!]" : "[copy]"}
-              </button>
             </div>
-            <ul className="space-y-1">
-              <li>
-                <span className="text-muted-term">github: </span>
-                <ExternalLink href="https://github.com/javierron">
-                  @javierron
-                </ExternalLink>
-              </li>
-              <li>
-                <span className="text-muted-term">scholar: </span>
-                <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
-                  Javier Ron
-                </ExternalLink>
-              </li>
-              <li>
-                <span className="text-muted-term">linkedin: </span>
-                <ExternalLink href="https://www.linkedin.com/in/javier-ron-arteaga-2ba3a579/">
-                  Javier Ron Arteaga
-                </ExternalLink>
-              </li>
-            </ul>
+            <div className="flex flex-wrap items-center gap-2">
+              <ExternalLink href="https://github.com/javierron">GitHub</ExternalLink>
+              <span className="text-muted-term">-</span>
+              <ExternalLink href="https://scholar.google.com/citations?user=QSYKdF4AAAAJ&hl=en&inst=3006122349567257957">
+                Scholar
+              </ExternalLink>
+              <span className="text-muted-term">-</span>
+              <ExternalLink href="https://www.linkedin.com/in/javier-ron-arteaga-2ba3a579/">
+                LinkedIn
+              </ExternalLink>
+            </div>
           </div>
         </section>
 
