@@ -138,6 +138,7 @@ const PUBS_FIRST: Pub[] = [
   { title: "Galapagos: Automated N-Version Programming with LLMs", venue: "ACM TOSEM", year: "2025", desc: "Automated N-version programming using large language models.", url: SCHOLAR("Tyk-4Ss8FVUC"), tags: ["LLMs", "N-version programming", "program synthesis"] },
   { title: "Proving and Rewarding Client Diversity to Strengthen Resilience of Blockchain Networks", venue: "ACM Distributed Ledger Technologies", year: "2025", desc: "Cryptographic proofs of client diversity for blockchain network resilience.", url: SCHOLAR("Y0pCki6q_DkC"), tags: ["blockchains", "cryptography", "client diversity"] },
   { title: "Verifiable Provenance of Software Artifacts with Zero-Knowledge Compilation", venue: "arXiv (under review)", year: "2026", desc: "Verifiable provenance of software artifacts via zero-knowledge compilation.", url: SCHOLAR("eQOLeE2rZwMC"), tags: ["software supply chain", "zero-knowledge", "provenance"] },
+  { title: "N-Version Programming with Coding Agents", venue: "arXiv", year: "2026", desc: "Evaluating N-version programming with contemporary AI coding agents.", url: SCHOLAR("ufrVoPGSRksC"), tags: ["coding agents", "N-version programming", "LLMs"] },
 ];
 
 const PUBS_COLLAB: Pub[] = [
