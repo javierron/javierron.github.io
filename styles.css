@@ -1,0 +1,445 @@
+:root {
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --background: oklch(0.16 0.015 150);
+  --foreground: oklch(0.92 0.01 120);
+  --accent-term: oklch(0.88 0.18 150);
+  --accent-term-foreground: oklch(0.16 0.015 150);
+  --muted-term: oklch(0.55 0.02 150);
+  --rule: oklch(0.32 0.02 150);
+  --selection: oklch(0.88 0.18 150 / 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--accent-term-foreground);
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in oklab, var(--background) 90%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.topbar-inner {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.path,
+.muted,
+.prompt,
+.subtitle,
+.small-muted,
+.footer,
+.entry-meta,
+.entry-list span,
+.subheading span,
+.award-stack p {
+  color: var(--muted-term);
+}
+
+.path {
+  white-space: nowrap;
+}
+
+.accent,
+.prose strong,
+.entry-title > span:first-child,
+.entry-title h3 + .muted + span,
+.entry-school,
+.pub-title > span,
+.thesis-item > span,
+code {
+  color: var(--accent-term);
+}
+
+.topnav {
+  display: none;
+  margin-left: auto;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.topnav a {
+  padding: 0.125rem 0.375rem;
+  color: var(--muted-term);
+  text-decoration: none;
+  transition: color 80ms linear, background-color 80ms linear;
+}
+
+.topnav a:hover,
+.topnav a.active {
+  color: var(--accent-term);
+}
+
+.topnav a.active {
+  background: var(--accent-term);
+  color: var(--accent-term-foreground);
+}
+
+.container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 6rem;
+  font-size: 0.875rem;
+}
+
+.hero-title {
+  margin-top: 0.5rem;
+  color: var(--accent-term);
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.hero-title::after {
+  content: "▮";
+  display: inline-block;
+  margin-left: 0.15em;
+  color: var(--accent-term);
+  animation: term-blink 1s steps(2, start) infinite;
+}
+
+@keyframes term-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.intro {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: color-mix(in oklab, var(--foreground) 90%, transparent);
+}
+
+.intro span {
+  color: var(--muted-term);
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  margin-top: 1.25rem;
+  font-size: 0.75rem;
+}
+
+.ascii-rule {
+  margin: 2rem 0;
+  overflow: hidden;
+  color: var(--rule);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.section-heading {
+  scroll-margin-top: 6rem;
+  color: var(--accent-term);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.section-heading span {
+  color: var(--muted-term);
+}
+
+.prose {
+  margin-top: 1rem;
+  color: color-mix(in oklab, var(--foreground) 90%, transparent);
+}
+
+.prose p + p {
+  margin-top: 0.75rem;
+}
+
+.term-link {
+  color: var(--accent-term);
+  text-decoration: none;
+  border-bottom: 1px dashed color-mix(in oklab, var(--accent-term) 50%, transparent);
+  transition: background-color 80ms linear, color 80ms linear;
+}
+
+.term-link:hover,
+.term-link:focus-visible {
+  background: var(--accent-term);
+  color: var(--accent-term-foreground);
+  outline: none;
+  border-bottom-color: var(--accent-term);
+}
+
+.entry-stack {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 1.5rem;
+}
+
+.education-stack {
+  gap: 1.5rem;
+}
+
+.entry {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.entry-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+}
+
+.entry-title h3,
+.award-stack strong,
+.pub-link {
+  font-weight: 700;
+}
+
+.entry-meta,
+.small-muted,
+.footer,
+.skills-label {
+  font-size: 0.75rem;
+}
+
+.entry-meta,
+.entry-list,
+.entry-tags,
+.entry-school {
+  padding-left: 1.25rem;
+}
+
+.entry-list {
+  margin-top: 0.25rem;
+  color: color-mix(in oklab, var(--foreground) 90%, transparent);
+}
+
+.entry-list li + li {
+  margin-top: 0.25rem;
+}
+
+.entry-tags {
+  margin-top: 0.25rem;
+}
+
+.tag-chip {
+  display: inline-block;
+  padding: 0 0.4rem;
+  margin: 0 0.25rem 0.25rem 0;
+  color: var(--accent-term);
+  border: 1px solid color-mix(in oklab, var(--accent-term) 40%, transparent);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  line-height: 1.4rem;
+}
+
+.subheading {
+  margin-top: 0.75rem;
+  color: var(--accent-term);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.subheading.spaced {
+  margin-top: 2rem;
+}
+
+.pub-stack {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.pub-item {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.pub-title,
+.thesis-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0 0.5rem;
+}
+
+.pub-title > div,
+.thesis-item > div {
+  min-width: 0;
+}
+
+.pub-title em {
+  font-style: normal;
+}
+
+.pub-item p {
+  padding-left: 1.25rem;
+  color: color-mix(in oklab, var(--foreground) 90%, transparent);
+}
+
+.pub-tags {
+  padding-left: 1.25rem;
+}
+
+.award-stack {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.award-stack div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+}
+
+.award-stack p {
+  padding-left: 1.5rem;
+}
+
+.skills-label {
+  margin-top: 1rem;
+}
+
+.tags {
+  margin-top: 0.5rem;
+}
+
+.languages {
+  margin-top: 1rem;
+}
+
+.languages li + li {
+  margin-top: 0.25rem;
+}
+
+.contact {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.contact > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer {
+  margin-top: 0.5rem;
+}
+
+.footer p + p {
+  margin-top: 0.25rem;
+}
+
+.not-found-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1rem;
+}
+
+.not-found {
+  max-width: 28rem;
+  text-align: center;
+}
+
+.not-found h1 {
+  color: var(--accent-term);
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.not-found h2 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.not-found p {
+  margin: 0.5rem 0 1.5rem;
+  color: var(--muted-term);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .topbar-inner {
+    flex-wrap: nowrap;
+    font-size: 0.875rem;
+  }
+
+  .topnav {
+    display: flex;
+  }
+
+  .container {
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-links {
+    font-size: 0.875rem;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+  }
+
+  .subheading {
+    font-size: 1.25rem;
+  }
+}
