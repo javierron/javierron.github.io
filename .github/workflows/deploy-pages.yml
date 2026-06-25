@@ -31,7 +31,7 @@ jobs:
       - name: Prepare artifact
         run: |
           mkdir -p dist
-          cp index.html 404.html styles.css script.js .nojekyll dist/
+          cp index.html 404.html styles.css dist/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
